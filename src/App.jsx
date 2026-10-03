@@ -20,28 +20,39 @@ const Total = (props) => {
   )
 }
 
+const Footer = (props) => {
+  return (
+    <p style={{ fontStyle: 'italic', marginTop: '20px' }}>
+      {props.message} | Student ID: {props.studentId}
+    </p>
+  )
+}
+
 const App = () => {
-  const course = 'CSIT340 - Industry Elective 1'
-  const parts = [
-    {
-      name: 'CSIT327 - Information Management 2',
-      exercises: 3
-    },
-    {
-      name: 'IT317 - Project Management',
-      exercises: 3
-    },
-    {
-      name: 'IT365 - Data Analytics 1',
-      exercises: 3
-    }
-  ]
+  const course = {
+    name: 'CSIT340 - Industry Elective 1',
+    parts: [
+      {
+        name: 'CSIT327 - Information Management 2',
+        exercises: 3
+      },
+      {
+        name: 'IT317 - Project Management',
+        exercises: 3
+      },
+      {
+        name: 'IT365 - Data Analytics 1',
+        exercises: 3
+      }
+    ]
+  }
 
   return (
     <div>
-      <Header course={course} />
-      <Content parts={parts} />
-      <Total parts={parts} />
+      <Header course={course.name} />
+      <Content parts={course.parts} />
+      <Total parts={course.parts} />
+      <Footer message="Lab Activity 3: Introduction to React Completed" studentId="24-1725-581" />
     </div>
   )
 }
